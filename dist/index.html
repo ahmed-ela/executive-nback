@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Executive n-back</title>
+  <link rel="stylesheet" href="style.css?v=executive-1">
+  <link rel="stylesheet" href="executive.css?v=3">
+</head>
+<body>
+  <main>
+    <header><h1>Executive n-back</h1><span class="badge">LOCAL PRACTICE</span></header>
+    <p class="intro">Remember the day. Move it forward by one. Compare.</p>
+    <section class="stats" aria-label="Practice totals">
+      <div><strong id="minutes">0.0</strong><span>minutes · <span id="hours">0.00</span> h</span></div>
+      <div><strong id="rounds">0</strong><span>rounds completed</span></div>
+      <div><strong id="average">—</strong><span>average level</span></div>
+    </section>
+    <section class="trainer" aria-label="Training">
+      <div class="settings"><label for="level">Level <select id="level" aria-label="N-back level"></select></label><span id="duration">1m 6s / round</span></div>
+      <p id="instructions">Press when this day is <strong>one day after</strong> the day from <strong>1 item ago.</strong></p>
+      <p id="example" class="example">Monday → Tuesday is a match. Sunday → Monday counts too.</p>
+      <div class="stage"><div id="stimulus" role="img" aria-label="Weekday display">Ready</div></div>
+      <p id="status" role="status">Includes a short countdown and warm-up.</p>
+      <div class="responses">
+        <button id="match" aria-pressed="false" disabled><kbd>Space</kbd><span>Next day — match</span></button>
+      </div>
+      <p class="hint">Click or press Space for a match. Otherwise, do nothing.</p>
+      <progress id="progress" value="0" max="20" aria-label="Round progress"></progress>
+      <button id="start" class="primary">Start round</button>
+      <button id="stop" class="text-button stop" hidden>Stop round</button>
+      <div id="result" hidden></div>
+    </section>
+    <section id="round-review" class="round-review" aria-labelledby="review-title" hidden></section>
+    <details id="history-section"><summary>Recent rounds <span id="history-count"></span></summary><div id="history">Your completed rounds will appear here.</div><button class="text-button" id="export" hidden>Export history ↓</button></details>
+    <footer><span id="save-note">Saved in this browser.</span> Scores reflect practice on this task.<br>Research-inspired trainer. General memory gains are unproven.</footer>
+  </main>
+  <script type="module" src="app.mjs?v=executive-4"></script>
+</body>
+</html>
